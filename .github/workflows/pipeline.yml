@@ -20,10 +20,12 @@ jobs:
           python-version: '3.7.11'
 
       - name: Install Requirements
-        run:  pip install flask pytest flask-wtf
+        run:  pip install flask coverage pytest flask-wtf
 
       - name: Unit Test
-        run: python -m unittest -v test
+        run: |
+          coverage rum -m pytest test.py
+          coverage xml app.py
 
   SonarCloud:
     name: SonarCloud
