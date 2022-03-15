@@ -24,7 +24,7 @@ jobs:
 
       - name: Unit Test
         run: |
-          coverage rum -m pytest test.py
+          coverage run -m pytest test.py
           coverage xml app.py
 
   SonarCloud:
